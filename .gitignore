@@ -6,7 +6,7 @@ TDD_Book_Practice/build/
 TDD_Book_Practice/src/.DS_Store
 TDD_Book_Practice/src/main/.DS_Store
 TDD_Book_Practice/src/test/.DS_Store
-
+TDD_Bowling_Practice/./
 TDD_Book_Practice/.gradle
 TDD_Book_Practice/.idea
 .gradle
@@ -17,3 +17,5 @@ TDD_Book_Practice/.idea
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+TDD_Bowling_Practice/build/
