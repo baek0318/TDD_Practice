@@ -1,10 +1,15 @@
 HELP.md
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+.DS_Store
+TDD_Book_Practice/.DS_Store
+TDD_Book_Practice/.gradle
+TDD_Book_Practice/build/
+TDD_Book_Practice/src/.DS_Store
+TDD_Book_Practice/src/main/.DS_Store
+TDD_Book_Practice/src/test/.DS_Store
 
+TDD_Book_Practice/.gradle
+TDD_Book_Practice/.idea
+.gradle
 .idea
 *.iws
 *.iml
