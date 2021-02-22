@@ -4,13 +4,19 @@ public class Calculator {
 
     public static int totalCalc(List<Frame> frames) {
         int sum = 0;
-        for (Frame frame : frames) {
-            sum += frame.score;
+        for (int i = 0; i < frames.size()-2; i++) {
+            sum += frames.get(i).getScore();
         }
         return sum;
     }
 
     public static void spareCalc(Frame first, Frame second) {
-        first.score += second.score;
+        int score = first.getScore() + second.getFirstScore();
+        first.setScore(score);
+    }
+
+    public static void strikeCalc(Frame first, Frame second, Frame third) {
+        int score = first.getScore() + second.getFirstScore() + third.getFirstScore();
+        first.setScore(score);
     }
 }
