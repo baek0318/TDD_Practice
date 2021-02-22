@@ -17,16 +17,21 @@ public class Frame {
     public void roll(int first_score, int second_score) {
         this.firstScore = first_score;
         this.secondScore = second_score;
-        int sum = firstScore+secondScore;
-        if(sum == 10) {
-            if(first_score == 10) {
-                this.isStrike = true;
-            }
-            else {
-                this.isSpare = true;
-            }
+        score = firstScore+secondScore;
+        checkSpare();
+        checkStrike();
+    }
+
+    private void checkSpare() {
+        if(score == 10 && firstScore != 10) {
+            this.isSpare = true;
         }
-        score = sum;
+    }
+
+    private void checkStrike() {
+        if(score == 10 && firstScore == 10) {
+            this.isStrike = true;
+        }
     }
 
     public int getScore() {
