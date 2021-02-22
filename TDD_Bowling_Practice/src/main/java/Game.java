@@ -14,20 +14,31 @@ public class Game {
     }
 
     public int start(int first, int second) {
-        for(int i = 0; i < frames.size(); i++){
+        frames.get(0).roll(first, second);
+        for(int i = 1; i < frames.size(); i++){
             frames.get(i).roll(first, second);
-            if(i >= 1) {
-                if(frames.get(i-1).getIsSpare()) {
-                    Calculator.spareCalc(frames.get(i-1), frames.get(i));
-                }
-            }
-            if(i >= 2) {
-                if(frames.get(i-2).getIsStrike()) {
-                    Calculator.strikeCalc(frames.get(i-2), frames.get(i-1), frames.get(i));
-                }
-            }
+            checkSpare(i);
+            checkStrike(i);
         }
         return end();
+    }
+
+    private void checkSpare(int index) {
+        if(frames.get(index-1).getIsSpare()) {
+            Calculator.spareCalc(frames.get(index-1), frames.get(index));
+        }
+    }
+
+    private void checkStrike(int index) {
+        if(index >= 2) {
+            calcStrike(index);
+        }
+    }
+
+    private void calcStrike(int index) {
+        if(frames.get(index-2).getIsStrike()) {
+            Calculator.strikeCalc(frames.get(index-2), frames.get(index-1), frames.get(index));
+        }
     }
 
     private int end() {
